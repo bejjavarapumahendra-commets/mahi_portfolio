@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>B. Mahendra | Portfolio</title>
+    <link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+</head>
+<body>
+    <nav>
+        <a href='/' class='{% if active=="home" %}active{% endif %}'>Home</a>
+        <a href='/education' class='{% if active=="education" %}active{% endif %}'>Education</a>
+        <a href='/projects' class='{% if active=="projects" %}active{% endif %}'>Projects</a>
+        <a href='/skills' class='{% if active=="skills" %}active{% endif %}'>Skills</a>
+        <a href='/hobbies' class='{% if active=="hobbies" %}active{% endif %}'>Hobbies</a>
+    </nav>
+
+    <div class='page-container'>
+        {% block content %}{% endblock %}
+    </div>
+
+<script src='{{ url_for("static", filename="script.js") }}'></script>
+</body>
+</html>
